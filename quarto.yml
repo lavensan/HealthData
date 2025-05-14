@@ -1,0 +1,15 @@
+project:
+ type: website
+ output-dir: _site
+
+website:
+  title: "ROC Humvar"
+  navbar:
+    left:
+    - text: Home
+      href: index.html
+
+format: 
+  html:
+    toc: true
+    code-fold: true

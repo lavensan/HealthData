@@ -1,0 +1,15 @@
+{
+  "hash": "ce8b07eeb8d25a6ea6cdec523f0d2aa3",
+  "result": {
+    "engine": "knitr",
+    "markdown": "----\ntitle: \"ROC Humvar\"\nformat: html\neditor: visual\n-----\n\n\n\n\n\n\n## Load in humvar dataset\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndf <- read.csv(\"humvar.csv\")\ndim(df)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 38684    47\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

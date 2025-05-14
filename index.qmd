@@ -1,0 +1,43 @@
+----
+title: "ROC Humvar"
+format: html
+editor: visual
+-----
+
+
+```{r setup, include=FALSE}
+library(randomForest)
+library(ggplot2)
+library(readr)
+```
+
+
+
+## Load in humvar dataset
+
+
+```{r load dayta}
+df <- read.csv("humvar.csv")
+dim(df)
+```
+
+```{r train}
+dfTrain <- df[sample(1000,3),]
+dfTest <- df[sample(1000,3),]
+dfTest$labels<-as.factor(dfTest$labels)
+dfTrain$labels<-as.factor(dfTrain$labels)
+rf<-randomForest(labels~., data=dfTrain)
+rf
+rf2<-randomForest(labels~., data=dfTest)
+rf2
+```
+## ROC CURVE
+
+```{r ROC}
+preds<-predict(rf,dfTest,type="prob")
+head(preds)
+preds<-cbind(preds,"obs"=dfTest$labels)
+preds %>% roc_curve(obs,Pathogenic)%>%
+    autoplot()
+
+```
